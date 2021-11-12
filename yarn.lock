@@ -6297,10 +6297,10 @@ internal-slot@^1.0.3:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-ionicons@5.5.4:
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.5.4.tgz#5fef0c44038a630f5bb5f9a7dc83ec158bab95b1"
-  integrity sha512-3ph8X9my3inhabWEZ7N0XRA0MnnNQ1v9a602mLNgWsIXnxE9G5BybIZ/pws/OZZ/hoNlvSjk801N03yL9/FNgQ==
+ionicons@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-6.0.0.tgz#c7c0d253d62b33ba3fa47568ff58586a5d8bdcd1"
+  integrity sha512-p83W1T8jZUlllHAjuIWaDQbI36OYqdrwcf8MhYbKW7+9rjGlCMP9+5OaR0W7tl0QfM004uAiy/zkc7HTpDNKgA==
   dependencies:
     "@stencil/core" "~2.10.0"
 
