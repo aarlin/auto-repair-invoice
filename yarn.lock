@@ -1388,10 +1388,10 @@
     tar "^6.0.1"
     tslib "^2.0.1"
 
-"@ionic/core@5.8.5":
-  version "5.8.5"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.8.5.tgz#c967fdfa6e554f63f90227c04d2821c758a680cb"
-  integrity sha512-KUT3kKcON606FBJBZcAZn2c62OfPhVR/LQO260FH3znUmpZbqD2/Zm1LOTCxluiG9H6UIe8TVo9n8BgsKxCygA==
+"@ionic/core@5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.9.1.tgz#aac373e02835006bfcf40b066f31d1b6725f8286"
+  integrity sha512-/jVO0N5ESs/iPFcrFZ/JFvW2Uh0ZV1uLFT2vtbtMfCaOMZK8Bmt36ZR1cDDFTuw14vPOLz/1wI2pbQru48JpkQ==
   dependencies:
     "@stencil/core" "^2.4.0"
     ionicons "^5.5.3"
@@ -1407,19 +1407,19 @@
   resolved "https://registry.yarnpkg.com/@ionic/react-hooks/-/react-hooks-0.0.8.tgz#3d036aaeffbb7b136ac411c896e907fb59bdbf92"
   integrity sha512-0U9hoPByJxd4/Sdx/uad2sDYCgQmQdG0nt+UNEzkk6IF4TjNVAQPcFQ6nJIc2oiUAMjaxzoLKmG8ziamuyfZaQ==
 
-"@ionic/react-router@5.8.5":
-  version "5.8.5"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.8.5.tgz#29866b96fd9ac34fa39f0b739a89570cb1b06281"
-  integrity sha512-/oQHnBLB8ZaH11yik4TrpBjPvPC/4O1PkbphTfolI5RS8pr96pSfNNJ3bmL7dKhw67z/PbT46xTkWkPkOWPmyw==
+"@ionic/react-router@5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.9.1.tgz#2c6ea6af4081901d93290e8f09acefa23e3c4236"
+  integrity sha512-O2SlglLB1loeNnPvN2kZE4ncpc1zltOMZPWXpkAhgPdB+QgD26lrwT9WjFvuVMqWsXLSPFmqs2SIgM6gKWSZdw==
   dependencies:
     tslib "*"
 
-"@ionic/react@5.8.5":
-  version "5.8.5"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.8.5.tgz#33d8a86a2d78c154e755fa6ddc436c74c2dffe4b"
-  integrity sha512-Egs/LK6g/yCAAvaGLridiHQLzHp1I/R0/fdZhiSrOVmg8dR0Ro45JUkhBZeteLNjwCY6YjzenCcStICFWQVKYQ==
+"@ionic/react@5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.9.1.tgz#02fa9a3089b32e4e8e266d6660696c50b4a66ed4"
+  integrity sha512-gn/PZH61A9RKqMQc1eyYlRMGKSpzU8AQCACuvRAcJJcQEb9l4Ryosvt6hp5IlUPWDzc17nnTQgn4Y9D8PREPQA==
   dependencies:
-    "@ionic/core" "5.8.5"
+    "@ionic/core" "5.9.1"
     ionicons "^5.1.2"
     tslib "*"
 
@@ -11584,10 +11584,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.4.4:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
+typescript@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
