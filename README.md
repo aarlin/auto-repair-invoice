@@ -1,7 +1,16 @@
-# Starter
+# Auto Repair Invoice
 
-## References
+## Steps  
+`yarn install`  
+`yarn tauri info`  
 
-https://github.com/electron-react-boilerplate/electron-react-boilerplate
+## Local
 
-https://github.com/getshifter/example-ionic-react-capacitor
+Run the following commands in two separate terminals
+
+`yarn dev`  
+`yarn tauri dev`  
+
+## Prerequisites
+
+https://tauri.studio/en/docs/getting-started/setup-windows
