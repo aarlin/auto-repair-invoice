@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import Titlebar from './components/Titlebar';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <>
+    <Titlebar/>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -39,6 +42,7 @@ function App() {
         </p>
       </header>
     </div>
+    </>
   )
 }
 
