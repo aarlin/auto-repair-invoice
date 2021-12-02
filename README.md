@@ -1,5 +1,14 @@
 # Auto Repair Invoice
 
+## Prerequisites
+
+https://tauri.studio/en/docs/getting-started/setup-windows
+
+1. WebView2
+2. Rustup
+3. Microsoft Visual Studio C++ build tools
+4. npm OR yarn
+
 ## Steps  
 `yarn install`  
 `yarn tauri info`  
@@ -8,9 +17,10 @@
 
 Run the following commands in two separate terminals
 
-`yarn dev`  
 `yarn tauri dev`  
 
-## Prerequisites
+## References
 
-https://tauri.studio/en/docs/getting-started/setup-windows
+https://github.com/getshifter/example-ionic-react-capacitor
+https://github.com/electron-react-boilerplate/electron-react-boilerplate
+

@@ -41,7 +41,7 @@ button {
   font-size: calc(10px + 2vmin);
 }
 
-/* Custom Titlebar */
+/* Tauri Custom Titlebar */
 
 .titlebar {
   height: 30px;
