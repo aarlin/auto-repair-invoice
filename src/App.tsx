@@ -11,6 +11,7 @@ import {
   Link as RouteLink
 } from "react-router-dom";
 import Invoices from './components/Invoices'
+import Settings from './components/Settings'
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
           </Route>
           <Route path="/favorites" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
           </Route>
-          <Route path="/settings" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
+          <Route path="/settings" element={<SidebarWithHeader children={<Settings />} />}>
           </Route>
         </Routes>
       </Router>
