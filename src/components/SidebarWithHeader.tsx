@@ -26,6 +26,9 @@ import {
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import logo from '../assets/logo.png';
+import {
+  Link as RouteLink
+} from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
@@ -33,7 +36,7 @@ interface LinkItemProps {
   path: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome, path: '/home' },
+  { name: 'Home', icon: FiHome, path: '/' },
   { name: 'Trending', icon: FiTrendingUp, path: '/trending' },
   { name: 'Explore', icon: FiCompass, path: '/explore' },
   { name: 'Favourites', icon: FiStar, path: '/favorites' },
@@ -95,9 +98,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} path={link.path}>
-          {link.name}
-        </NavItem>
+        <RouteLink to={link.path}>
+          <NavItem key={link.name} icon={link.icon} path={link.path}>
+            {link.name}
+          </NavItem>
+        </RouteLink>
       ))}
     </Box>
   );
@@ -110,7 +115,7 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, path, children, ...rest }: NavItemProps) => {
   return (
-    <Link href={path} style={{ textDecoration: 'none' }}>
+    <Link style={{ textDecoration: 'none' }}>
       <Flex
         align="center"
         p="4"
