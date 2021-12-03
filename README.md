@@ -23,4 +23,5 @@ Run the following commands in two separate terminals
 
 https://github.com/getshifter/example-ionic-react-capacitor
 https://github.com/electron-react-boilerplate/electron-react-boilerplate
+https://www.vectorstock.com/royalty-free-vectors/vectors-by_defmorph
 
