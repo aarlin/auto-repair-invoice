@@ -30,13 +30,14 @@ import logo from '../assets/logo.png';
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  path: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Home', icon: FiHome, path: '/home' },
+  { name: 'Trending', icon: FiTrendingUp, path: '/trending' },
+  { name: 'Explore', icon: FiCompass, path: '/explore' },
+  { name: 'Favourites', icon: FiStar, path: '/favorites' },
+  { name: 'Settings', icon: FiSettings, path: '/settings' },
 ];
 
 export default function SidebarWithHeader({
@@ -94,7 +95,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} path={link.path}>
           {link.name}
         </NavItem>
       ))}
@@ -105,10 +106,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
+  path: string;
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, path, children, ...rest }: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }}>
+    <Link href={path} style={{ textDecoration: 'none' }}>
       <Flex
         align="center"
         p="4"

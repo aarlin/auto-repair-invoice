@@ -42,6 +42,10 @@ const VehicleIdentification = () => {
         return error
     }
 
+    const callEndpoint = () => {
+        
+    }
+
     return (
         <Formik
             enableReinitialize={true}
