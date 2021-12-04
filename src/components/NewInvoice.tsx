@@ -1,7 +1,14 @@
 import { Select, Input } from "@chakra-ui/react";
-import { Datepicker } from "./Datepicker";
+import DatePicker from "react-datepicker";
 
 const NewInvoice = () => {
+    const handleDateSelect = () => {
+
+    }
+
+    const handleDateChange = () => {
+        
+    }
     return (
         <>
             <Select placeholder='Select option'>
@@ -10,7 +17,7 @@ const NewInvoice = () => {
                 <option value='option3'>Option 3</option>
             </Select>
             <Input placeholder='Basic usage' />
-            <Datepicker position="relative" />
+            <DatePicker onSelect={handleDateSelect} onChange={handleDateChange}></DatePicker>
         </>
     )
 }
