@@ -13,6 +13,7 @@ import {
 import Invoices from './components/Invoices'
 import Settings from './components/Settings'
 import Customers from './components/Customers'
+import NewInvoice from './components/NewInvoice'
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
           <Route path="/customers" element={<SidebarWithHeader children={<Customers />} />}>
           </Route>
           <Route path="/invoices" element={<SidebarWithHeader children={<Invoices />} />}>
+          </Route>
+          <Route path="/invoices/new" element={<SidebarWithHeader children={<NewInvoice />} />}>
           </Route>
           <Route path="/favorites" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
           </Route>

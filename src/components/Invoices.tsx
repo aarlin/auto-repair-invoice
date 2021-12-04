@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, ChakraProvider, Heading } from "@chakra-ui/react";
 import { Column } from "react-table";
 import { DataTable } from "./DataTable";
+import { useNavigate } from 'react-router-dom';
 
 type UnitConversion = {
     invoiceId: string;
@@ -63,8 +64,10 @@ const columns: Column<UnitConversion>[] = [
 ];
 
 const Invoices = () => {
-    const submitForm = () => {
-        console.log('submitForm');
+    let navigate = useNavigate();
+
+    const createNewInvoice = () => {
+        navigate('/invoices/new', { replace: true} );
     }
     return (
         <>
@@ -72,7 +75,7 @@ const Invoices = () => {
             <Button
                 mt={4}
                 colorScheme='teal'
-                onClick={submitForm}
+                onClick={createNewInvoice}
                 type='submit'
             >
                 New Invoice
