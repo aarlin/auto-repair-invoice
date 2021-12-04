@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Invoices from './components/Invoices'
 import Settings from './components/Settings'
+import Customers from './components/Customers'
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
           </Route>
-          <Route path="/trending" element={<SidebarWithHeader children={<Invoices />} />}>
+          <Route path="/customers" element={<SidebarWithHeader children={<Customers />} />}>
           </Route>
-          <Route path="/explore" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
+          <Route path="/invoices" element={<SidebarWithHeader children={<Invoices />} />}>
           </Route>
           <Route path="/favorites" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
           </Route>
