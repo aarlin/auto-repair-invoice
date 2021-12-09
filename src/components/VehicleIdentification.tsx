@@ -5,6 +5,7 @@ import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import { omniVin } from '../api/vinDecoder';
 import { invoke } from "@tauri-apps/api/tauri";
+import Stats from "./Stats";
 
 type Identity = {
     vin: string;
@@ -546,12 +547,12 @@ const VehicleIdentification = () => {
                         Submit
                     </Button>
                     {identity && (
-                        <VStack>
-                            <Text>{identity.vin}</Text>
-                            <Text>{identity.country}</Text>
-                            <Text>{identity.manufacturer}</Text>
-                            <Text>{identity.region}</Text>
-                        </VStack>
+                        <Stats 
+                            vin={identity.vin} 
+                            country={identity.country}
+                            manufacturer={identity.manufacturer}
+                            region={identity.region}
+                        />
                     )}
 
                 </Form>

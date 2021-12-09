@@ -17,30 +17,13 @@ const Stats = (props: any) => {
                 direction="column"
                 align="flex-start"
             >
-                <HStack>
-                    <StatLabel>Company Name: {props.companyName}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>Street: {props.street}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>City: {props.city}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>State: {props.state}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>Zip Code: {props.zip}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>Phone Number: {props.phoneNumber}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>Fax Number: {props.faxNumber}</StatLabel>
-                </HStack>
-                <HStack>
-                    <StatLabel>Email: {props.email}</StatLabel>
-                </HStack>
+                {
+                    Object.keys(props).map(key => (
+                        <HStack>
+                            <StatLabel>{key}: {props[key]}</StatLabel>
+                        </HStack>
+                    ))
+                }
             </Stack>
         </Stat>
     );
