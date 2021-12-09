@@ -46,6 +46,7 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
+ "vin",
 ]
 
 [[package]]
@@ -3255,6 +3256,15 @@ name = "version_check"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
+
+[[package]]
+name = "vin"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c45d48eec6879faf75ab19d12d4fb0ae054919594b5bd1feae2105e135d79b92"
+dependencies = [
+ "lazy_static",
+]
 
 [[package]]
 name = "void"

@@ -1,13 +1,22 @@
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Input, FormErrorMessage, Button } from "@chakra-ui/react";
+import { Input, FormErrorMessage, Button, Text, VStack } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/select";
 import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import { omniVin } from '../api/vinDecoder';
+import { invoke } from "@tauri-apps/api/tauri";
+
+type Identity = {
+    vin: string;
+    country: string;
+    manufacturer: string;
+    region: string;
+}
 
 const VehicleIdentification = () => {
     const [make, setMake] = useState('');
     const [userType, setUserType] = useState('');
+    const [identity, setIdentity] = useState<Identity>();
 
     const changeMake = (event: any) => {
         const newMake = event.target.value;
@@ -43,18 +52,20 @@ const VehicleIdentification = () => {
         return error
     }
 
-    const callEndpoint = async () => {
-        const omnivin = await omniVin();
-        console.log(omnivin);
-
+    const callEndpoint = async (vin: any) => {
+        console.log('calling endpoint with', vin)
+        invoke('my_custom_command', { invokeMessage: vin })
+            .then((message: any) => setIdentity(message))
+            .catch((error) => console.error(error))
     }
 
     return (
+        <>
         <Formik
             enableReinitialize={true}
             initialValues={{ vin: '', year: '', make: '', userType: '' }}
             onSubmit={(values, actions) => {
-                callEndpoint();
+                callEndpoint(values.vin);
 
                 console.log(values, actions);
                 setTimeout(() => {
@@ -69,7 +80,7 @@ const VehicleIdentification = () => {
                         {({ field, form }: any) => (
                             <FormControl isInvalid={form.errors.name && form.touched.name}>
                                 <FormLabel htmlFor='vin'>Vehicle Identification Number</FormLabel>
-                                <Input {...field} id='vin' placeholder='Vehicle Identification Number'/>
+                                <Input {...field} id='vin' placeholder='Vehicle Identification Number' />
                                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                             </FormControl>
                         )}
@@ -534,10 +545,21 @@ const VehicleIdentification = () => {
                     >
                         Submit
                     </Button>
+                    {identity && (
+                        <VStack>
+                            <Text>{identity.vin}</Text>
+                            <Text>{identity.country}</Text>
+                            <Text>{identity.manufacturer}</Text>
+                            <Text>{identity.region}</Text>
+                        </VStack>
+                    )}
+
                 </Form>
+            
             )
             }
         </Formik >
+        </>
     )
 }
 
