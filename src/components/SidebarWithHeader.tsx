@@ -99,7 +99,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       </Flex>
       {LinkItems.map((link) => (
         <RouteLink to={link.path}>
-          <NavItem key={link.name} icon={link.icon} path={link.path}>
+          <NavItem as="li" key={link.name} icon={link.icon} path={link.path}>
             {link.name}
           </NavItem>
         </RouteLink>

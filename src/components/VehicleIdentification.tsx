@@ -3,6 +3,7 @@ import { Input, FormErrorMessage, Button } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/select";
 import { Formik, Form, Field } from "formik";
 import { useState } from "react";
+import { omniVin } from '../api/vinDecoder';
 
 const VehicleIdentification = () => {
     const [make, setMake] = useState('');
@@ -42,8 +43,10 @@ const VehicleIdentification = () => {
         return error
     }
 
-    const callEndpoint = () => {
-        
+    const callEndpoint = async () => {
+        const omnivin = await omniVin();
+        console.log(omnivin);
+
     }
 
     return (
@@ -51,6 +54,8 @@ const VehicleIdentification = () => {
             enableReinitialize={true}
             initialValues={{ vin: '', year: '', make: '', userType: '' }}
             onSubmit={(values, actions) => {
+                callEndpoint();
+
                 console.log(values, actions);
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2))

@@ -1,5 +1,7 @@
 import { Select, Input } from "@chakra-ui/react";
-import DatePicker from "react-datepicker";
+import { useState } from "react";
+import BarcodeScanner from "./BarcodeScanner";
+// import BarcodeReader from 'react-barcode-reader';
 
 const NewInvoice = () => {
     const handleDateSelect = () => {
@@ -7,8 +9,18 @@ const NewInvoice = () => {
     }
 
     const handleDateChange = () => {
-        
+
     }
+
+    const handleScan = (data: any) => {
+        console.log(data);
+    }
+    
+    const handleError = (err: any) => {
+        console.error(err)
+    }
+    const [startDate, setStartDate] = useState(new Date());
+
     return (
         <>
             <Select placeholder='Select option'>
@@ -17,7 +29,7 @@ const NewInvoice = () => {
                 <option value='option3'>Option 3</option>
             </Select>
             <Input placeholder='Basic usage' />
-            <DatePicker onSelect={handleDateSelect} onChange={handleDateChange}></DatePicker>
+        <BarcodeScanner readers={undefined}/>
         </>
     )
 }
