@@ -3,6 +3,7 @@ import { Button, ChakraProvider, Heading } from "@chakra-ui/react";
 import { Column } from "react-table";
 import { DataTable } from "./DataTable";
 import { useNavigate } from 'react-router-dom';
+import InvoiceGenerator from "./InvoiceGenerator";
 
 type UnitConversion = {
     invoiceId: string;
@@ -81,6 +82,7 @@ const Invoices = () => {
                 New Invoice
             </Button>
             <DataTable columns={columns} data={data}></DataTable>
+            <InvoiceGenerator/>
         </>
     )
 }
