@@ -2,7 +2,7 @@ import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Tfoot } from "@chakra-ui
 import customers from '../data/customers';
 
 
-const Customers = () => {
+const Clients = () => {
     return (
         <Table variant='striped' colorScheme='teal'>
             <TableCaption>
@@ -34,4 +34,4 @@ const Customers = () => {
     )
 }
 
-export default Customers;
+export default Clients;

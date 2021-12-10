@@ -6,6 +6,7 @@ import { useState } from "react";
 import { omniVin } from '../api/vinDecoder';
 import { invoke } from "@tauri-apps/api/tauri";
 import Stats from "./Stats";
+import BarcodeScanner from "./BarcodeScanner";
 
 type Identity = {
     vin: string;
@@ -546,6 +547,7 @@ const VehicleIdentification = () => {
                     >
                         Submit
                     </Button>
+                    <BarcodeScanner readers={undefined}/>
                     {identity && (
                         <Stats 
                             vin={identity.vin} 
