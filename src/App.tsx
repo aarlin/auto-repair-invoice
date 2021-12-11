@@ -10,10 +10,11 @@ import {
   Route,
   Link as RouteLink
 } from "react-router-dom";
-import Invoices from './components/Invoices'
-import Settings from './components/Settings'
-import Clients from './components/Clients'
-import NewInvoice from './components/NewInvoice'
+import Invoices from './components/invoices/Invoices'
+import Settings from './components/settings/Settings'
+import Clients from './components/clients/Clients'
+import NewInvoice from './components/invoices/NewInvoice'
+import NewClient from './components/clients/NewClient'
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
         <Routes>
           <Route path="/" element={<SidebarWithHeader children={<VehicleIdentification />} />}>
           </Route>
-          <Route path="/customers" element={<SidebarWithHeader children={<Clients />} />}>
+          <Route path="/clients" element={<SidebarWithHeader children={<Clients />} />}>
+          </Route>
+          <Route path="/clients/new" element={<SidebarWithHeader children={<NewClient />} />}>
           </Route>
           <Route path="/invoices" element={<SidebarWithHeader children={<Invoices />} />}>
           </Route>

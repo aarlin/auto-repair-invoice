@@ -5,7 +5,7 @@ import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import { omniVin } from '../api/vinDecoder';
 import { invoke } from "@tauri-apps/api/tauri";
-import Stats from "./Stats";
+import Stats from "./common/Stats";
 import BarcodeScanner from "./BarcodeScanner";
 
 type Identity = {

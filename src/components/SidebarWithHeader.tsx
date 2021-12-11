@@ -25,7 +25,7 @@ import {
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_transparent.png';
 import {
   Link as RouteLink
 } from "react-router-dom";
@@ -37,7 +37,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome, path: '/' },
-  { name: 'Customers', icon: FiTrendingUp, path: '/customers' },
+  { name: 'Clients', icon: FiTrendingUp, path: '/clients' },
   { name: 'Invoices', icon: FiCompass, path: '/invoices' },
   { name: 'Favourites', icon: FiStar, path: '/favorites' },
   { name: 'Settings', icon: FiSettings, path: '/settings' },

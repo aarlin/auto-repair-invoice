@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button, ChakraProvider, Heading } from "@chakra-ui/react";
 import { Column } from "react-table";
-import { DataTable } from "./DataTable";
+import { DataTable } from "../common/DataTable";
 import { useNavigate } from 'react-router-dom';
 import InvoiceGenerator from "./InvoiceGenerator";
 

@@ -8,7 +8,9 @@ import {
     Button,
 } from '@chakra-ui/react'
 import { useState } from "react";
-import Stats from './Stats';
+import Stats from '../common/Stats';
+import Dropzone from "./Dropzone";
+import create from 'zustand';
 
 type ISubmitResult = {
     companyName: string;
@@ -20,6 +22,27 @@ type ISubmitResult = {
     faxNumber: string;
     email: string;
 }
+
+const initialState = {
+    companyName: 'Company XYZ',
+    street: 'Street 123',
+    city: 'City Z',
+    state: 'NY',
+    zip: '12312',
+    phoneNumber: '555-555-5555',
+    faxNumber: '555-555-5555',
+    email: 'email@email.com',
+}
+
+const useStore = create((set: any) => ({
+    ...initialState,
+    clear: () => set(initialState),
+    replace: (value: any) => set({ ...initialState, ...value, edited: true }),
+    changeField: (e: any) => {
+      const { name, value } = e.target;
+      set({ [name]: value, edited: true });
+    },
+  }));
 
 const Settings = () => {
     const [data, setData] = useState<ISubmitResult>();
@@ -38,6 +61,11 @@ const Settings = () => {
             }, 3000)
         })
     }
+    const changeField = useStore((state) => state.changeField);
+
+    const importFile = () => {
+        console.log('importFile')
+    }
 
 
     return (
@@ -52,6 +80,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='street'>Street</FormLabel>
                 <Input
@@ -61,6 +90,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='city'>City</FormLabel>
                 <Input
@@ -70,6 +100,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='state'>State</FormLabel>
                 <Input
@@ -79,6 +110,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 2, message: 'Minimum length should be 2' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='zip'>Zip Code</FormLabel>
                 <Input
@@ -88,6 +120,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='phoneNumber'>Phone Number</FormLabel>
                 <Input
@@ -97,6 +130,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='faxNumber'>Fax Number</FormLabel>
                 <Input
@@ -106,6 +140,7 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
                 <FormLabel htmlFor='email'>Email</FormLabel>
                 <Input
@@ -115,13 +150,16 @@ const Settings = () => {
                         required: 'This is required',
                         minLength: { value: 4, message: 'Minimum length should be 4' },
                     })}
+                    onChange={changeField}
                 />
+                <FormLabel htmlFor='logoUpload'>Company Logo</FormLabel>
+                <Dropzone onFileAccepted={importFile}/>
                 <FormErrorMessage>
                     {errors.name && errors.name.message}
                 </FormErrorMessage>
             </FormControl>
             <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
-                Submit
+                Save Changes
             </Button>
         </form>
 

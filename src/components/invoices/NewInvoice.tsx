@@ -2,6 +2,7 @@ import { Select, Input, InputGroup, InputLeftAddon, InputRightAddon, Stack } fro
 import { useState } from "react";
 import InvoiceItems from "./InvoiceItems";
 // import BarcodeReader from 'react-barcode-reader';
+import create from 'zustand';
 
 const NewInvoice = () => {
     const handleDateSelect = () => {

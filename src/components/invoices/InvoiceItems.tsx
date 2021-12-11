@@ -1,9 +1,10 @@
 import { Button } from "@chakra-ui/button";
-import { CheckIcon } from "@chakra-ui/icons";
+import { CheckIcon, DeleteIcon, Icon } from "@chakra-ui/icons";
 import { InputGroup, InputLeftElement, Input, InputRightElement } from "@chakra-ui/input";
 import { Table, Thead, Tr, Th, Tbody, Td, Tfoot } from "@chakra-ui/table";
 import { setNestedObjectValues } from "formik";
 import { useEffect, useState } from "react";
+import create from "zustand";
 
 const invoiceHeaders = [
     'Description',
@@ -31,7 +32,8 @@ const InvoiceItems = () => {
 
     const setupNewInvoice = useEffect(() => {
         setInvoiceItemRows(invoiceItemRows);
-    }, [])
+    }, []);
+
     return (
         <>
             <Table size='sm'>
@@ -47,13 +49,12 @@ const InvoiceItems = () => {
                         <Tr>
                             <Td>
                                 <InputGroup>
-                                    <InputLeftElement
-                                        pointerEvents='none'
-                                        color='gray.300'
-                                        fontSize='1.2em'
-                                        children='$'
-                                    />
-                                    <Input placeholder='Enter amount' />
+                                    <Input placeholder='Description' />
+                                </InputGroup>
+                            </Td>
+                            <Td>
+                                <InputGroup>
+                                    <Input placeholder='Quantity' />
                                 </InputGroup>
                             </Td>
                             <Td>
@@ -64,7 +65,7 @@ const InvoiceItems = () => {
                                         fontSize='1.2em'
                                         children='$'
                                     />
-                                    <Input placeholder='Enter amount' />
+                                    <Input placeholder='Price' />
                                 </InputGroup>
                             </Td>
                             <Td>
@@ -75,30 +76,22 @@ const InvoiceItems = () => {
                                         fontSize='1.2em'
                                         children='$'
                                     />
-                                    <Input placeholder='Enter amount' />
+                                    <Input placeholder='Subtotal' />
                                 </InputGroup>
                             </Td>
                             <Td>
                                 <InputGroup>
-                                    <InputLeftElement
+                                    <InputRightElement
                                         pointerEvents='none'
                                         color='gray.300'
                                         fontSize='1.2em'
-                                        children='$'
+                                        children='%'
                                     />
-                                    <Input placeholder='Enter amount' />
+                                    <Input placeholder='Tax Rate' />
                                 </InputGroup>
                             </Td>
                             <Td>
-                                <InputGroup>
-                                    <InputLeftElement
-                                        pointerEvents='none'
-                                        color='gray.300'
-                                        fontSize='1.2em'
-                                        children='$'
-                                    />
-                                    <Input placeholder='Enter amount' />
-                                </InputGroup>
+                                <Icon as={DeleteIcon} w={6} h={6} />
                             </Td>
                         </Tr>
                     ))}
