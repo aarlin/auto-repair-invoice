@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 48"
+    class="icon style_icon__1QNOc icon-_deprecated/servicekind_restorationCustomBuilds style_tileIcon__67bdz">
+    <path
+        d="M41 18H10v3h.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H10v4h31V18zm1 0v12h3V18h-3zm4 0v12h1.75a.25.25 0 01.25.25v1.5a.25.25 0 01-.25.25H.25a.25.25 0 01-.25-.25v-1.5A.25.25 0 01.25 30H1V18H.25a.25.25 0 01-.25-.25v-1.5A.25.25 0 01.25 16h47.5a.25.25 0 01.25.25v1.5a.25.25 0 01-.25.25H46zM8 18H4v12h4v-4h-.5a.5.5 0 01-.5-.5v-4a.5.5 0 01.5-.5H8v-3zM5 33h8a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3a1 1 0 011-1zm0-23h8a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3a1 1 0 011-1zm30 23h8a1 1 0 011 1v3a1 1 0 01-1 1h-8a1 1 0 01-1-1v-3a1 1 0 011-1zm0-23h8a1 1 0 011 1v3a1 1 0 01-1 1h-8a1 1 0 01-1-1v-3a1 1 0 011-1zM15 27h18.75a.25.25 0 01.25.25V30h-1v-2H15v2h-1v-3h1zm0-7h18v-2h1v2.75a.25.25 0 01-.25.25H14v-3h1v2z"
+        fill-rule="evenodd"></path>
+</svg>
