@@ -7,6 +7,7 @@ import { omniVin } from '../api/vinDecoder';
 import { invoke } from "@tauri-apps/api/tauri";
 import Stats from "./common/Stats";
 import BarcodeScanner from "./BarcodeScanner";
+import { getClient, Body } from "@tauri-apps/api/http";
 
 type Identity = {
     vin: string;
@@ -14,6 +15,8 @@ type Identity = {
     manufacturer: string;
     region: string;
 }
+
+export let onMessage: any;
 
 const VehicleIdentification = () => {
     const [make, setMake] = useState('');
@@ -56,9 +59,29 @@ const VehicleIdentification = () => {
 
     const callEndpoint = async (vin: any) => {
         console.log('calling endpoint with', vin)
-        invoke('my_custom_command', { invokeMessage: vin })
-            .then((message: any) => setIdentity(message))
-            .catch((error) => console.error(error))
+        // invoke('my_custom_command', { invokeMessage: vin })
+        //     .then((message: any) => setIdentity(message))
+        //     .catch((error) => console.error(error))
+        let httpMethod = "GET";
+        let httpUrl = "https://jsonplaceholder.typicode.com/todos/1";
+        let httpBody = "";
+        const client = await getClient();
+        let method = httpMethod || "GET";
+        let url = httpUrl || "";
+        const options: any = {
+            url: url || "",
+            method: method || "GET",
+        };
+        if (
+            (httpBody.startsWith("{") && httpBody.endsWith("}")) ||
+            (httpBody.startsWith("[") && httpBody.endsWith("]"))
+        ) {
+            options.body = Body.json(JSON.parse(httpBody));
+        } else if (httpBody !== "") {
+            options.body = Body.text(httpBody);
+        }
+        await client.request(options).then(onMessage).catch(onMessage);
+        console.log(onMessage);
     }
 
     return (
