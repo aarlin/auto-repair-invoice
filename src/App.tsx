@@ -15,10 +15,15 @@ import Settings from './components/settings/Settings'
 import Clients from './components/clients/Clients'
 import NewInvoice from './components/invoices/NewInvoice'
 import NewClient from './components/clients/NewClient'
+import { useEffect } from 'react'
+import { invoke } from '@tauri-apps/api/tauri';
 
 
-function App() {
-  // 2. Use at the root of your app
+const App = () => {
+  useEffect(() => {
+      invoke('close_splashscreen');
+  });
+
   return (
     <ChakraProvider>
       <Titlebar />
