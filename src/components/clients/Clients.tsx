@@ -2,6 +2,7 @@ import { Button } from "@chakra-ui/button";
 import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Tfoot } from "@chakra-ui/table";
 import { useNavigate } from "react-router-dom";
 import customers from '../../data/customers';
+import NewClient from "./NewClient";
 
 
 const Clients = () => {
@@ -38,15 +39,8 @@ const Clients = () => {
                         </Tr>
                     ))}
                 </Tbody>
-            </Table>
-            <Button
-                mt={4}
-                colorScheme='teal'
-                onClick={addClient}
-                type='submit'
-            >
-                Add New Client
-            </Button>
+            </Table>    
+            <NewClient/>
         </>
     )
 }
