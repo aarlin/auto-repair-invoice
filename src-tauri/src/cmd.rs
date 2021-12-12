@@ -70,3 +70,44 @@ pub async fn doge_coin() -> Result<(), Box<dyn Error>> {
     println!("{:}", doge);
     Ok(())
 }
+
+// #[derive(Debug, Serialize, Deserialize)]
+// pub struct VincipherBody {
+//     vinNum: String,
+//     submitBtn: String,
+// }
+
+// #[tauri::command]
+// pub async fn vin_cipher() -> Result<(), Box<dyn Error>> {
+//     let mut h = header::HeaderMap::new();
+//     h.insert("Accept", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("accept-language", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("cache-control", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("content-type", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("sec-ch-ua", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("sec-ch-ua-mobile", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("sec-ch-ua", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("sec-ch-ua-platform", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+//     h.insert("Referer", header::HeaderValue::from_static("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"));
+    
+//     let client = reqwest::Client::builder()
+//         .default_headers(h)
+//         .build()?;
+
+//     let requestBody = VincipherBody {
+//         vinNum: "JALC4W165B7003640".into(),
+//         submitBtn: "Get+VIN+Data".into()
+//     };
+
+//     let data = serde_urlencoded::to_string(&requestBody).expect("serialize issue");
+
+//     let doge = client
+//         .post("https://vindecipher.com/omnivin/index.cfm?action=decode")
+//         .send()
+//         .await?
+//         .text()
+//         .await?;
+//     println!("{:}", doge);
+//     Ok(())
+
+// }

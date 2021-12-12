@@ -1,0 +1,36 @@
+name: "build"
+on: [push, pull_request]
+
+jobs:
+  Build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, ubuntu-latest, windows-latest]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - uses: actions/checkout@v2.4.0
+    - name: setup node
+      uses: actions/setup-node@v2.5.0
+      with:
+        node-version: 12
+    - name: install Rust stable
+      uses: actions-rs/toolchain@v1.0.7
+      with:
+        toolchain: stable
+    - name: install webkit2gtk (ubuntu only)
+      if: matrix.platform == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y webkit2gtk-4.0
+    - uses: codecov/codecov-action@v2
+      with:        
+        token: ${{ secrets.CODECOV_TOKEN }}
+    - name: install app dependencies and build it
+      run: yarn && yarn build
+    - uses: tauri-apps/tauri-action@v0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+        TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}

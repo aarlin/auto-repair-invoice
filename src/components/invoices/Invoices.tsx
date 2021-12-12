@@ -4,6 +4,7 @@ import { Column } from "react-table";
 import { DataTable } from "../common/DataTable";
 import { useNavigate } from 'react-router-dom';
 import InvoiceGenerator from "./InvoiceGenerator";
+import NewInvoice from "./NewInvoice";
 
 type UnitConversion = {
     invoiceId: string;
@@ -73,14 +74,7 @@ const Invoices = () => {
     return (
         <>
             <Heading>Invoices</Heading>
-            <Button
-                mt={4}
-                colorScheme='teal'
-                onClick={createNewInvoice}
-                type='submit'
-            >
-                New Invoice
-            </Button>
+            <NewInvoice/>
             <DataTable columns={columns} data={data}></DataTable>
             <InvoiceGenerator/>
         </>

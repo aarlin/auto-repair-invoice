@@ -1,10 +1,12 @@
-import { Select, Input, InputGroup, InputLeftAddon, InputRightAddon, Stack } from "@chakra-ui/react";
-import { useState } from "react";
-import InvoiceItems from "./InvoiceItems";
-// import BarcodeReader from 'react-barcode-reader';
-import create from 'zustand';
+import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import React, { useState } from "react";
 
 const NewInvoice = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const initialRef: any = React.useRef()
+    const finalRef: any = React.useRef()
+
     const handleDateSelect = () => {
 
     }
@@ -25,21 +27,45 @@ const NewInvoice = () => {
 
     return (
         <>
-            <Stack spacing={4}>
-                <Select placeholder='Select Client'>
-                    <option value='option1'>Option 1</option>
-                    <option value='option2'>Option 2</option>
-                    <option value='option3'>Option 3</option>
-                </Select>
-                <InputGroup>
-                    <InputLeftAddon children={invoicePrepend} />
-                    <Input type='tel' placeholder='phone number' />
-                </InputGroup>
-                <InvoiceItems></InvoiceItems>
-                <Input placeholder='Basic usage' />
-            </Stack>
+            <Button mt={4}
+                colorScheme='teal'
+                onClick={onOpen}
+            >New Invoice</Button>
+
+
+            <Modal
+                initialFocusRef={initialRef}
+                isOpen={isOpen}
+                onClose={onClose}
+            >
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>New Invoice</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                        <FormControl>
+                            <FormLabel>First name</FormLabel>
+                            <Input ref={initialRef} placeholder='First name' />
+                        </FormControl>
+
+                        <FormControl mt={4}>
+                            <FormLabel>Last name</FormLabel>
+                            <Input placeholder='Last name' />
+                        </FormControl>
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button colorScheme='blue' mr={3}>
+                            Save
+                        </Button>
+                        <Button onClick={onClose}>Cancel</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </>
     )
 }
 
 export default NewInvoice;
+
+
