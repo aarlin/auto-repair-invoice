@@ -15,7 +15,7 @@
     "axios": "0.24.0",
     "easyinvoice": "1.0.153",
     "formik": "2.2.9",
-    "framer-motion": "4",
+    "framer-motion": "5",
     "quagga": "0.12.1",
     "react": "17.0.0",
     "react-barcode-reader": "0.0.2",
